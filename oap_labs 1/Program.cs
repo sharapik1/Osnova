@@ -94,7 +94,7 @@ namespace oap_labs_1
             Console.WriteLine($"Ugol2 = {Ugol2}");
             Console.Write("Press ENTER to continue...");
             Console.ReadLine();
-            */ 
+            */
             /* Код четвертый
             Console.Write("Number1: ");
             var Number1 = Convert.ToDouble(Console.ReadLine());
@@ -116,10 +116,48 @@ namespace oap_labs_1
             Console.WriteLine($"number2 = {Number2}");
             Console.Write("Press ENTER to continue...");
             Console.ReadLine();
-            */ 
-        }
-    }   
-}
+            */
+            Console.Write("Input X: ");
+            var X = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Input Y: ");
+            var Y = Convert.ToDouble(Console.ReadLine());
+            if (X == 0)
+            {
+                if (Y == 0)
+                    Console.WriteLine("является началом координат");
+                else
+                    Console.WriteLine("пренадлежит оси Y");
+
+            }
+            else
+            {
+                if (X > 0 && Y > 0)
+                {
+                    Console.WriteLine("пренадлежит первой четверти");
+                }
+                else if (X > 0 && Y < 0)
+                {
+                    Console.WriteLine("пренадлежит четвертой четверти");
+                }
+                if (Y == 0)
+                {
+                    Console.WriteLine("пренадлежит оси X");
+                }
+                else
+                {
+                    if (X < 0 && Y > 0)
+                    {
+                        Console.WriteLine("пренадлежит второй четверти");
+                    }
+                    else if (X < 0 && Y < 0)
+                    {
+                        Console.WriteLine("пренадлежит третей четверти");
+                    }
+                    Console.Write("Press ENTER to continue...");
+                    Console.ReadLine();
+                }
+            }
+        }   }       }
 
 
 
