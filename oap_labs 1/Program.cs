@@ -3,115 +3,124 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*
+
 namespace oap_labs_1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //команда Console.Write выводит текст в консоль
-            Console.Write("Input katet1: ");
-            // команда Console.ReadLine читает СТРОКУ из консоли
-            var Katet1 = Console.ReadLine();
+            /*
+            Console.Write("input number1") ;
+            var number1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("input number2");
+            var number2 = Convert.ToDouble(Console.ReadLine());       
+            Console.Write("input number3");
+            var number3 = Convert.ToDouble(Console.ReadLine());
+            if(number1 >=0)
+            {
+                number1 = Math.Pow(number1, 2);
+            }
+            else
+            {
+                number1 = Math.Pow(number1, 4);
+            }
+            if (number2 >= 0)
+            {
+                number2 = Math.Pow(number2, 2);
+            }
+            else
+            {
+                number2 = Math.Pow(number2, 4);
+            }
+            number3 = (number3 >=0)? Math.Pow(number3, 2) : Math.Pow(number3, 4);
+            Console.WriteLine($"number1 = {number1}");
+            Console.WriteLine($"number2 = {number2}");
+            Console.WriteLine($"number3 = {number3}");
+            Console.Write("Press ENTER to continue...");
+            Console.ReadLine();
+            */
 
-            Console.Write("Input katet2: ");
-            var Katet2 = Console.ReadLine();
 
-            // команда Math.Sqrt - квадратный корень
-            // Math.Pow - возведение в степень
-            // Convert.ToDouble - преобразует строку в число
-            var Gipotenuza = Math.Sqrt(Math.Pow(Convert.ToDouble(Katet1), 2) + Math.Pow(Convert.ToDouble(Katet2), 2));
-            var Perimetr = Convert.ToDouble(Katet1) + Convert.ToDouble(Katet2) + Convert.ToDouble(Gipotenuza);
-            var Ploshad = (Convert.ToDouble(Katet1) * Convert.ToDouble(Katet2)) / 2;
 
-            // выводим результат
-            // знак $ перед строкой указывает, что внутри строки в фигурных скобках названия переменных
-            Console.WriteLine($"Perimetr = {Perimetr}");
-            Console.WriteLine($"Ploshad = {Ploshad}");
-            // читаем строку, чтобы консольное окно сразу не закрылось
+
+
+            /*
+            Console.Write("Input X1: ");
+            var X1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Input Y1: ");
+            var Y1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Input X2: ");
+            var X2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Input Y2: ");
+            var Y2 = Convert.ToDouble(Console.ReadLine());
+            var Dlina1 = Math.Sqrt(Math.Pow(X1, 2) + Math.Pow(Y1, 2));
+            var Dlina2 = Math.Sqrt(Math.Pow(X2, 2) + Math.Pow(Y2, 2));
+            if (Dlina1 < Dlina2)
+            {
+                Console.WriteLine("первaя точка ближе");
+            }
+            else
+            {
+                Console.WriteLine("вторая точка ближе");
+            }
+            Console.WriteLine($"Dlina1 = {Dlina1}");
+            Console.WriteLine($"Dlina2 = {Dlina2}");
+            Console.Write("Press ENTER to continue...");
+            Console.ReadLine();
+            */
+
+
+
+            /*
+            Console.Write("Input Ugol1: ");
+            var Ugol1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Input Ugol2: ");
+            var Ugol2 = Convert.ToDouble(Console.ReadLine());
+            if ((Ugol1 + Ugol2) < 180)
+            {
+                Console.WriteLine("треугольник существует");
+                if (Ugol1 == 90 || Ugol2 == 90 || Ugol2 + Ugol1 == 90)
+                {
+                    Console.WriteLine("треугольник прямоугольный");
+                }
+                else Console.WriteLine("треугольник не прямоугольный");
+            }
+            else
+            {
+                Console.WriteLine("треугольник не существует");
+            }
+            Console.WriteLine($"Ugol1 = {Ugol1}");
+            Console.WriteLine($"Ugol2 = {Ugol2}");
+            Console.Write("Press ENTER to continue...");
+            Console.ReadLine();
+            */
+            Console.Write("Number1: ");
+            var Number1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Number2: ");
+            var Number2 = Convert.ToDouble(Console.ReadLine());
+            var PoluSumma = (Number1 + Number2) / 2;
+            var Proizvedenie = 2 * (Number1 * Number2);
+            if (Number1 < Number2)
+            {
+                Number1 = PoluSumma;
+                Number2 = Proizvedenie;
+            }
+            else
+            {
+                Number2 = PoluSumma;
+                Number1 = Proizvedenie;
+            }
+            Console.WriteLine($"number1 = {Number1}");
+            Console.WriteLine($"number2 = {Number2}");
             Console.Write("Press ENTER to continue...");
             Console.ReadLine();
         }
-    }
+    }   
 }
-        */
 
 
 
-
-// подключены какие-то библиотеки
-
-
-// namespace такой же как и название проекта
-/*
-namespace oap_labs
-{
-    // про классы мы пока не говорили...
-    class Program
-    {
-        // точка входа в программу
-        static void Main(string[] args)
-        {
-            // команда Console.Write выводит текст в консоль
-            Console.Write("input Хa ");
-            // команда Console.ReadLine читает СТРОКУ из консоли
-            var Xa = Console.ReadLine();
-            Console.Write("input Xb");
-            var Xb = Console.ReadLine();
-            Console.Write("Input Ya ");
-            var Ya = Console.ReadLine();
-            Console.Write("input Yb");
-            var Yb = Console.ReadLine();           
-            Console.Write("input Xc");
-            var Xc = Console.ReadLine();
-            Console.Write("input Yc");
-            var Yc = Console.ReadLine();
-            var AB = Math.Sqrt(
-             Math.Pow(Convert.ToDouble(Xb) - Convert.ToDouble(Xa), 2) +
-             Math.Pow(Convert.ToDouble(Yb) - Convert.ToDouble(Ya), 2)
-             );
-            var BC = Math.Sqrt(
-            Math.Pow(Convert.ToDouble(Xc) - Convert.ToDouble(Xb), 2) +
-            Math.Pow(Convert.ToDouble(Yc) - Convert.ToDouble(Yb), 2)
-            );
-            var AC = Math.Sqrt(
-            Math.Pow(Convert.ToDouble(Xc) - Convert.ToDouble(Xa), 2) +
-            Math.Pow(Convert.ToDouble(Yc) - Convert.ToDouble(Ya), 2)
-            );
-            // команда Math.Sqrt - квадратный корень
-            // Math.Pow - возведение в степень
-            // Convert.ToDouble - преобразует строку в число
-            var Perimetr = (Convert.ToDouble(AB)) + (Convert.ToDouble(BC)) + (Convert.ToDouble(AC));
-            var PolyPerimetr = Convert.ToDouble(Perimetr) / 2;
-            var Ploshad = Math.Sqrt(
-            Convert.ToDouble(PolyPerimetr) * (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(AB)) *
-            (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(BC)) *
-            (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(AC))
-            );
-            // выводим результат
-            // знак $ перед строкой указывает, что внутри строки в фигурных скобках названия переменных
-            Console.WriteLine($"Perimetr = {Perimetr}");
-            Console.WriteLine($"Ploshad = {Ploshad}");
-
-            // читаем строку, чтобы консольное окно сразу не закрылось
-            Console.Write("Press ENTER to continue...");
-            Console.ReadLine();
-        }
-    }
-}
-*/
-
-/*
-Console.Write("Inpat radius: ");
-var radius = Console.ReadLine();
-var dlina = Convert.ToDouble(radius) * Math.PI * 2;
-var ploshad = Math.Pow(Convert.ToDouble(radius), 2) * Math.PI;
-Console.WriteLine($"dlina = {dlina}");
-Console.WriteLine($"Ploshad = {ploshad}");
-Console.Write("Press ENTER to continue...");
-Console.ReadLine();
-*/
 
 
 
