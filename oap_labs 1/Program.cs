@@ -10,7 +10,7 @@ namespace oap_labs_1
     {
         static void Main(string[] args)
         {
-            /*
+            /* Код первый
             Console.Write("input number1") ;
             var number1 = Convert.ToDouble(Console.ReadLine());
             Console.Write("input number2");
@@ -45,7 +45,7 @@ namespace oap_labs_1
 
 
 
-            /*
+            /* Код Второй
             Console.Write("Input X1: ");
             var X1 = Convert.ToDouble(Console.ReadLine());
             Console.Write("Input Y1: ");
@@ -72,7 +72,7 @@ namespace oap_labs_1
 
 
 
-            /*
+            /* Код третий
             Console.Write("Input Ugol1: ");
             var Ugol1 = Convert.ToDouble(Console.ReadLine());
             Console.Write("Input Ugol2: ");
@@ -94,7 +94,8 @@ namespace oap_labs_1
             Console.WriteLine($"Ugol2 = {Ugol2}");
             Console.Write("Press ENTER to continue...");
             Console.ReadLine();
-            */
+            */ 
+            /* Код четвертый
             Console.Write("Number1: ");
             var Number1 = Convert.ToDouble(Console.ReadLine());
             Console.Write("Number2: ");
@@ -115,6 +116,7 @@ namespace oap_labs_1
             Console.WriteLine($"number2 = {Number2}");
             Console.Write("Press ENTER to continue...");
             Console.ReadLine();
+            */ 
         }
     }   
 }
