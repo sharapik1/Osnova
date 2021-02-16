@@ -77,6 +77,22 @@ namespace oap_labs_1
             Console.WriteLine("{0}!={1}", factorial, f1);       
             Console.ReadLine();
             */
+            /*
+            var Massiv = new int[10];
+            Random Rand = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                Massiv[i] = Rand.Next(100);
+                if (Massiv[i] % 2 == 0)
+                    Console.Write("\n{0} - четное", Massiv[i]);
+                else
+                    Console.Write("\n{0} - Нечетное", Massiv[i]);
+
+
+            }
+            Console.Write("\nPress ENTER to continue...");
+            Console.ReadLine();
+            */
         } 
     }
 }
