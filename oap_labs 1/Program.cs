@@ -3,118 +3,106 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*
+
 namespace oap_labs_1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //команда Console.Write выводит текст в консоль
-            Console.Write("Input katet1: ");
-            // команда Console.ReadLine читает СТРОКУ из консоли
-            var Katet1 = Console.ReadLine();
+            {/*
+            var MassivDate = new List<DateTime>() { 
+                new DateTime(2021, 1, 15), 
+                new DateTime(2021, 2, 20),
+                new DateTime(2011, 5, 2),
+                new DateTime(2015, 5, 1),
+                new DateTime(2013, 5, 3),
+                new DateTime(2020, 1, 17)};
+            var result = new Dictionary<int, int>();
+            foreach(DateTime TekushayaData in MassivDate)
+            {
+                if (result.ContainsKey(TekushayaData.Month))
+                {
+                    result[TekushayaData.Month] = result[TekushayaData.Month] + 1;
+                }
+                else
+                    result[TekushayaData.Month] = 1;
+            }
+            var PopularMonth = -1;
+            var MaxCount = 0;
+            foreach (KeyValuePair<int,int> keyValue in result)
+            {
+                if(keyValue.Value > MaxCount)
+                {
+                    MaxCount = keyValue.Value;
+                    PopularMonth = keyValue.Key;
+                }
+            }
+            Console.WriteLine($"Самый популярный месяц {PopularMonth}");
+            */
+                /*
+                Console.WriteLine("Input posledovatelnost: ");
+                string Posledovatelnost = Console.ReadLine();
+                var StrelkaCoint = 0;
+                var strelka1 = ">>-->";
+                var strelka2 = "<--<<";
+                int poz = 0;
+                while((poz = Posledovatelnost.IndexOf(strelka1, poz))>=0)
+                {
+                    StrelkaCoint++;
+                    poz++;
+                }
+                poz = 0;
+                while ((poz = Posledovatelnost.IndexOf(strelka2, poz)) >= 0)
+                {
+                    StrelkaCoint++;
+                    poz++;
+                }
+                Console.WriteLine($"Количество стрелок: {StrelkaCoint}");
+                */
+                /*
 
-            Console.Write("Input katet2: ");
-            var Katet2 = Console.ReadLine();
+                DateTime date1 = new DateTime(2021, 02, 21);
+                DateTime date2 = new DateTime(2026, 02, 25);
+                Console.WriteLine(Math.Abs(date1.Subtract(date2).TotalDays));
+                */
+                /*
+                Console.WriteLine("Введите год: ");
+                DateTime date1 = new DateTime(Convert.ToInt32(Console.ReadLine()), 1, 1);
+                date1 = date1.AddDays(255);
+                var DateString = date1.ToString("dd MMMM");
+                Console.WriteLine($"день программиста отмечается  {DateString}");
+                */
+                /*
+                Console.WriteLine("Введите день: ");
+                DateTime date1 = new DateTime(2021, 1, 1);
+                date1 = date1.AddDays(Convert.ToInt32(Console.ReadLine())-1);
+                var DateString = date1.ToString("dddd");
+                var voskresenie = date1.DayOfWeek == DayOfWeek.Sunday ? 7 : (int)date1.DayOfWeek;
+                Console.WriteLine($"день недели {DateString}, и номер дня недели {voskresenie}");
+                */
+                DateTime date1 = new DateTime(2021, 06, 21);
+                Console.WriteLine("Введите дату в формате дд.мм.гггг: ");
+                string date2 = Console.ReadLine();
+                string[] StringArray = date2.Split('.');
+                var Date3 = new DateTime(Convert.ToInt32(StringArray[2]), Convert.ToInt32(StringArray[1]), Convert.ToInt32(StringArray[0]));
+                var Raznitca = date1.Subtract(Date3);
+                if (Raznitca.TotalDays == 0)
+                {
+                    Console.WriteLine("Сегодня экзамен");
+                }
+                else if (Raznitca.TotalDays > 0)
+                    Console.WriteLine($"Экзамен будет через {Raznitca.TotalDays} дней");
+                else
+                    Console.WriteLine($"Экзамен был {Math.Abs(Raznitca.TotalDays)} дней назад");
 
-            // команда Math.Sqrt - квадратный корень
-            // Math.Pow - возведение в степень
-            // Convert.ToDouble - преобразует строку в число
-            var Gipotenuza = Math.Sqrt(Math.Pow(Convert.ToDouble(Katet1), 2) + Math.Pow(Convert.ToDouble(Katet2), 2));
-            var Perimetr = Convert.ToDouble(Katet1) + Convert.ToDouble(Katet2) + Convert.ToDouble(Gipotenuza);
-            var Ploshad = (Convert.ToDouble(Katet1) * Convert.ToDouble(Katet2)) / 2;
 
-            // выводим результат
-            // знак $ перед строкой указывает, что внутри строки в фигурных скобках названия переменных
-            Console.WriteLine($"Perimetr = {Perimetr}");
-            Console.WriteLine($"Ploshad = {Ploshad}");
-            // читаем строку, чтобы консольное окно сразу не закрылось
-            Console.Write("Press ENTER to continue...");
-            Console.ReadLine();
+                Console.Write("Press ENTER to continue...");
+                Console.ReadLine();
+            }
         }
     }
 }
-        */
 
 
-
-
-// подключены какие-то библиотеки
-
-
-// namespace такой же как и название проекта
-/*
-namespace oap_labs
-{
-    // про классы мы пока не говорили...
-    class Program
-    {
-        // точка входа в программу
-        static void Main(string[] args)
-        {
-            // команда Console.Write выводит текст в консоль
-            Console.Write("input Хa ");
-            // команда Console.ReadLine читает СТРОКУ из консоли
-            var Xa = Console.ReadLine();
-            Console.Write("input Xb");
-            var Xb = Console.ReadLine();
-            Console.Write("Input Ya ");
-            var Ya = Console.ReadLine();
-            Console.Write("input Yb");
-            var Yb = Console.ReadLine();           
-            Console.Write("input Xc");
-            var Xc = Console.ReadLine();
-            Console.Write("input Yc");
-            var Yc = Console.ReadLine();
-            var AB = Math.Sqrt(
-             Math.Pow(Convert.ToDouble(Xb) - Convert.ToDouble(Xa), 2) +
-             Math.Pow(Convert.ToDouble(Yb) - Convert.ToDouble(Ya), 2)
-             );
-            var BC = Math.Sqrt(
-            Math.Pow(Convert.ToDouble(Xc) - Convert.ToDouble(Xb), 2) +
-            Math.Pow(Convert.ToDouble(Yc) - Convert.ToDouble(Yb), 2)
-            );
-            var AC = Math.Sqrt(
-            Math.Pow(Convert.ToDouble(Xc) - Convert.ToDouble(Xa), 2) +
-            Math.Pow(Convert.ToDouble(Yc) - Convert.ToDouble(Ya), 2)
-            );
-            // команда Math.Sqrt - квадратный корень
-            // Math.Pow - возведение в степень
-            // Convert.ToDouble - преобразует строку в число
-            var Perimetr = (Convert.ToDouble(AB)) + (Convert.ToDouble(BC)) + (Convert.ToDouble(AC));
-            var PolyPerimetr = Convert.ToDouble(Perimetr) / 2;
-            var Ploshad = Math.Sqrt(
-            Convert.ToDouble(PolyPerimetr) * (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(AB)) *
-            (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(BC)) *
-            (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(AC))
-            );
-            // выводим результат
-            // знак $ перед строкой указывает, что внутри строки в фигурных скобках названия переменных
-            Console.WriteLine($"Perimetr = {Perimetr}");
-            Console.WriteLine($"Ploshad = {Ploshad}");
-
-            // читаем строку, чтобы консольное окно сразу не закрылось
-            Console.Write("Press ENTER to continue...");
-            Console.ReadLine();
-        }
-    }
-}
-*/
-
-/*
-Console.Write("Inpat radius: ");
-var radius = Console.ReadLine();
-var dlina = Convert.ToDouble(radius) * Math.PI * 2;
-var ploshad = Math.Pow(Convert.ToDouble(radius), 2) * Math.PI;
-Console.WriteLine($"dlina = {dlina}");
-Console.WriteLine($"Ploshad = {ploshad}");
-Console.Write("Press ENTER to continue...");
-Console.ReadLine();
-*/
-
-
-
-
-
-
+        
