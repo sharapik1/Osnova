@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <td style="text-align: right; border: none; height: 20em;">
-      Разработал: Игимбаев Тимур<br/>
+      Разработала: Шарапова Екатерина<br/>
       Группа: И-21<br/>
       Проверил: Колесников Е.И.       
     </td>
@@ -35,7 +35,7 @@
 5. Бинарные файлы. BinaryWriter и BinaryReader
 6. Бинарная сериализация. BinaryFormatter
 # Вывод:
-1)Я получил имена и свойства дисков на копьютере:
+1. Я получила имена и свойства дисков на копьютере:
 ```
 Название: C:\
 Тип: Fixed
@@ -47,7 +47,7 @@
 Тип: Network
 
 ```
-2)Вывел списки файлов и подкатологов
+2. Вывела списки файлов и подкатологов
 ```
 Подкатологи
 C:\$Recycle.Bin
@@ -88,12 +88,12 @@ C:\hiberfil.sys
 C:\pagefile.sys
 C:\swapfile.sys
 ```
-3)Создавал каталог   
+3. Создавала каталог   
 ```
 string Path = @"C:\SomeDir";
 DirectoryInfo DirInfo = new DirectoryInfo(Path);
 ```
-4)Получал информацию о каталоге
+4. Получала информацию о каталоге
 ```
 DirectoryInfo dirInfo = new DirectoryInfo(dirName);
 Название каталога: Program Files
@@ -102,23 +102,23 @@ DirectoryInfo dirInfo = new DirectoryInfo(dirName);
 Корневой каталог: C:\
 
 ```
-5)Удалял каталог
+5. Удаляла каталог
 ```
 DirectoryInfo dirInfo = new DirectoryInfo(dirName);
 dirInfo.Delete(true);
 Каталог удален
 ```
-6)Перемещал каталог:
+6. Перемещала каталог:
 ```
 DirectoryInfo dirInfo = new DirectoryInfo(oldPath);
 ```
-7)Получал информацию о файле:
+7. Получала информацию о файле:
 ```
 Имя файла: readme.txt
 Время создания: 10.12.2020 14:30:55
 Размер: 22317
 ```
-8)Удалял файл:
+8. Удаляла файл:
 ```
 FileInfo fileInf = new FileInfo(path);
 if (fileInf.Exists)
@@ -126,11 +126,11 @@ if (fileInf.Exists)
 fileInf.Delete();
 }
 ```
-9)Перемещал файлы fileInf.MoveTo(newPath);
+9. Перемещала файлы fileInf.MoveTo(newPath);
 ```
 Файл перемещен
 ```
-10)Вводил строку в файл:
+10. Вводила строку в файл:
 ```
 Введите строку для записи в файл:
 Привет
