@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <td style="text-align: right; border: none; height: 20em;">
-      Разработала: Шарапова Екатерина<br/>
+      Разработал: Игимбаев Тимур<br/>
       Группа: И-21<br/>
       Проверил: Колесников Е.И.       
     </td>
@@ -28,10 +28,114 @@
 1. Ознакомиться с общими сведениями о программах.
 2. Практика с Исключениями
 # Краткий теоретический материал:
-1. Обработка исключений и условные конструкции
-2. Блок Catch и фильтры исключений
-3. Фильтры исключений
-4. Типы исключений
-5. Создание классов исключений
-6. Генерация исключения и оператор throw
-7. NULL
+1. Работа с дисками
+2. Работа с каталогами
+3. Работа с файлами. Классы File и FileInfo
+4. FileStream. Чтение и запись файла
+5. Бинарные файлы. BinaryWriter и BinaryReader
+6. Бинарная сериализация. BinaryFormatter
+# Вывод:
+1)Я получил имена и свойства дисков на копьютере:
+```
+Название: C:\
+Тип: Fixed
+Объем диска: 239398281216
+Свободное пространство: 151693197312
+Метка:
+
+Название: Z:\
+Тип: Network
+
+```
+2)Вывел списки файлов и подкатологов
+```
+Подкатологи
+C:\$Recycle.Bin
+C:\$WinREAgent
+C:\apache
+C:\C-21
+C:\Delete
+C:\Delphi7
+C:\Dir
+C:\Documents and Settings
+C:\EN.LPROJ
+C:\FAR3
+C:\GTK1
+C:\i21
+C:\Inprise
+C:\Intel
+C:\JAVASCRIPTCORE.RESOURCES1
+C:\PABCWork.NET
+C:\PerfLogs
+C:\Program Files
+C:\Program Files (x86)
+C:\ProgramData
+C:\Python27
+C:\Recovery
+C:\repozitor
+C:\SomeDir
+C:\SomeDir2
+C:\SomeDir3
+C:\System Volume Information
+C:\Users
+C:\Windows
+C:\Новая папка
+C:\Новая папка (2)
+
+Файлы
+C:\DumpStack.log.tmp
+C:\hiberfil.sys
+C:\pagefile.sys
+C:\swapfile.sys
+```
+3)Создавал каталог   
+```
+string Path = @"C:\SomeDir";
+DirectoryInfo DirInfo = new DirectoryInfo(Path);
+```
+4)Получал информацию о каталоге
+```
+DirectoryInfo dirInfo = new DirectoryInfo(dirName);
+Название каталога: Program Files
+Полное название каталога: C:\Program Files
+Время создания каталога: 07.12.2019 12:14:52
+Корневой каталог: C:\
+
+```
+5)Удалял каталог
+```
+DirectoryInfo dirInfo = new DirectoryInfo(dirName);
+dirInfo.Delete(true);
+Каталог удален
+```
+6)Перемещал каталог:
+```
+DirectoryInfo dirInfo = new DirectoryInfo(oldPath);
+```
+7)Получал информацию о файле:
+```
+Имя файла: readme.txt
+Время создания: 10.12.2020 14:30:55
+Размер: 22317
+```
+8)Удалял файл:
+```
+FileInfo fileInf = new FileInfo(path);
+if (fileInf.Exists)
+{
+fileInf.Delete();
+}
+```
+9)Перемещал файлы fileInf.MoveTo(newPath);
+```
+Файл перемещен
+```
+10)Вводил строку в файл:
+```
+Введите строку для записи в файл:
+Привет
+Текст записан в файл
+Текст из файла: Привет
+```
+
+
