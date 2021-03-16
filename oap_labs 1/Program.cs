@@ -3,115 +3,85 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*
+using System.Text.RegularExpressions;
+
 namespace oap_labs_1
 {
     class Program
+
     {
+        static void Exercise()
+        {
+            Console.WriteLine("Введите строку для поиска времени: ");
+            var time = Console.ReadLine();
+            Regex RegexExpretion = new Regex(@"([0][1-9]|[1][0-9]|[2][0-3]):([0-5][0-9])");
+            var Result = RegexExpretion.Match(time);
+
+            if (RegexExpretion.IsMatch(time))
+            {
+                Console.WriteLine(Result.Value);
+            }
+            else
+            {
+                Console.WriteLine("неккоректное время");
+            }
+        }
+        static void Exercise2()
+        {
+            
+            
+                Console.WriteLine("Введите строку для поиска html цвета: ");
+                var html = Console.ReadLine();
+                Regex RegexExpretion = new Regex(@"#([0-9]|[A-F]){6}");
+                var Result = RegexExpretion.Match(html);
+
+                if (RegexExpretion.IsMatch(html))
+                {
+                    Console.WriteLine(Result.Value);
+                }
+                else
+                {
+                    Console.WriteLine("неккоректный цвет");
+                }
+                Console.ReadKey();
+            
+        }
+        static void Exercise3()
+        {
+            Console.WriteLine("Введите строку для поиска арифметических операций: ");
+            var InpString = Console.ReadLine();
+            Regex RegexExpretion = new Regex(@"([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)([+]|[-]|[][\/]?)([-+]?(?:\d+(?:\.\d)?|\.\d+)(?:[eE][-+]?\d+)?)");
+            var Result = RegexExpretion.Match(InpString);
+
+            if (RegexExpretion.IsMatch(InpString))
+            {
+                Console.WriteLine(Result.Value);
+            }
+            else
+            {
+                Console.WriteLine("неккоректная строка");
+            }
+            Console.ReadKey();
+        }
         static void Main(string[] args)
         {
-            //команда Console.Write выводит текст в консоль
-            Console.Write("Input katet1: ");
-            // команда Console.ReadLine читает СТРОКУ из консоли
-            var Katet1 = Console.ReadLine();
+             //Exercise();
+            // Exercise2();
+           Exercise3();
+            Console.ReadKey();
 
-            Console.Write("Input katet2: ");
-            var Katet2 = Console.ReadLine();
-
-            // команда Math.Sqrt - квадратный корень
-            // Math.Pow - возведение в степень
-            // Convert.ToDouble - преобразует строку в число
-            var Gipotenuza = Math.Sqrt(Math.Pow(Convert.ToDouble(Katet1), 2) + Math.Pow(Convert.ToDouble(Katet2), 2));
-            var Perimetr = Convert.ToDouble(Katet1) + Convert.ToDouble(Katet2) + Convert.ToDouble(Gipotenuza);
-            var Ploshad = (Convert.ToDouble(Katet1) * Convert.ToDouble(Katet2)) / 2;
-
-            // выводим результат
-            // знак $ перед строкой указывает, что внутри строки в фигурных скобках названия переменных
-            Console.WriteLine($"Perimetr = {Perimetr}");
-            Console.WriteLine($"Ploshad = {Ploshad}");
-            // читаем строку, чтобы консольное окно сразу не закрылось
-            Console.Write("Press ENTER to continue...");
-            Console.ReadLine();
         }
     }
 }
-        */
+        
 
 
 
 
-// подключены какие-то библиотеки
 
 
-// namespace такой же как и название проекта
-/*
-namespace oap_labs
-{
-    // про классы мы пока не говорили...
-    class Program
-    {
-        // точка входа в программу
-        static void Main(string[] args)
-        {
-            // команда Console.Write выводит текст в консоль
-            Console.Write("input Хa ");
-            // команда Console.ReadLine читает СТРОКУ из консоли
-            var Xa = Console.ReadLine();
-            Console.Write("input Xb");
-            var Xb = Console.ReadLine();
-            Console.Write("Input Ya ");
-            var Ya = Console.ReadLine();
-            Console.Write("input Yb");
-            var Yb = Console.ReadLine();           
-            Console.Write("input Xc");
-            var Xc = Console.ReadLine();
-            Console.Write("input Yc");
-            var Yc = Console.ReadLine();
-            var AB = Math.Sqrt(
-             Math.Pow(Convert.ToDouble(Xb) - Convert.ToDouble(Xa), 2) +
-             Math.Pow(Convert.ToDouble(Yb) - Convert.ToDouble(Ya), 2)
-             );
-            var BC = Math.Sqrt(
-            Math.Pow(Convert.ToDouble(Xc) - Convert.ToDouble(Xb), 2) +
-            Math.Pow(Convert.ToDouble(Yc) - Convert.ToDouble(Yb), 2)
-            );
-            var AC = Math.Sqrt(
-            Math.Pow(Convert.ToDouble(Xc) - Convert.ToDouble(Xa), 2) +
-            Math.Pow(Convert.ToDouble(Yc) - Convert.ToDouble(Ya), 2)
-            );
-            // команда Math.Sqrt - квадратный корень
-            // Math.Pow - возведение в степень
-            // Convert.ToDouble - преобразует строку в число
-            var Perimetr = (Convert.ToDouble(AB)) + (Convert.ToDouble(BC)) + (Convert.ToDouble(AC));
-            var PolyPerimetr = Convert.ToDouble(Perimetr) / 2;
-            var Ploshad = Math.Sqrt(
-            Convert.ToDouble(PolyPerimetr) * (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(AB)) *
-            (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(BC)) *
-            (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(AC))
-            );
-            // выводим результат
-            // знак $ перед строкой указывает, что внутри строки в фигурных скобках названия переменных
-            Console.WriteLine($"Perimetr = {Perimetr}");
-            Console.WriteLine($"Ploshad = {Ploshad}");
 
-            // читаем строку, чтобы консольное окно сразу не закрылось
-            Console.Write("Press ENTER to continue...");
-            Console.ReadLine();
-        }
-    }
-}
-*/
 
-/*
-Console.Write("Inpat radius: ");
-var radius = Console.ReadLine();
-var dlina = Convert.ToDouble(radius) * Math.PI * 2;
-var ploshad = Math.Pow(Convert.ToDouble(radius), 2) * Math.PI;
-Console.WriteLine($"dlina = {dlina}");
-Console.WriteLine($"Ploshad = {ploshad}");
-Console.Write("Press ENTER to continue...");
-Console.ReadLine();
-*/
 
 
 
