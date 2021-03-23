@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfAspirant xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Aspirant>
+        <Name>Белкин Антон Владимирович</Name>
+        <Age>23</Age>
+        <Obrazovanie>Программист</Obrazovanie>
+        <Rucovoditel>Девятова Диана Александровна</Rucovoditel>
+        <Publicapublikatsii>
+            <string>ООП</string>
+            <string>ОАП</string>
+            <string>Системы Контроля Версий</string>
+            <string>Массивы</string>
+        </Publicapublikatsii>
+    </Aspirant>
+    <Aspirant>
+        <Name>Соколов Артём Андреевич </Name>
+        <Age>24</Age>
+        <Obrazovanie> Инженер </Obrazovanie>
+        <Rucovoditel> Кропотова Юлия Николаевна </Rucovoditel>
+        <string> Технические науки </string>
+        <string> Место и роль Ижненера в современном обществе </string>
+        <Publicapublikatsii>
+        </Publicapublikatsii>
+    </Aspirant>
+    <Aspirant>
+        <Name> Смирнов Руслан Антонович </Name>
+        <Age> 25 </Age>
+        <Obrazovanie> Менеджер по продажам </Obrazovanie>
+        <Rucovoditel> Леухина Ирина Анатольевна </Rucovoditel>
+        <Publicapublikatsii>
+        </Publicapublikatsii>
+    </Aspirant>
+    <Aspirant>
+        <Name>  Колесников Дмитрий Егорович </Name> 
+        <Age>26</Age>
+        <Obrazovanie> Архитектор </Obrazovanie>
+        <Rucovoditel> Кузенцова Ольга Васильевна </Rucovoditel>
+        <Publicapublikatsii>
+        <string> Дизайны </string>
+        <string> Интерьер </string>
+        <string> Строителство</string>
+        </Publicapublikatsii>
+    </Aspirant>
+    <Aspirant>
+        <Name>Окунев Владислав Васильевич</Name>
+        <Age> 23 </Age>
+        <Obrazovanie> Хиррург </Obrazovanie>
+        <Rucovoditel> Михайлова Екатерина Александровна</Rucovoditel>
+        <Publicapublikatsii>
+        </Publicapublikatsii>
+    </Aspirant>
+</ArrayOfAspirant>
