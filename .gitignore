@@ -1,3 +1,4 @@
-*/bin/
+oap_labs 1/bin/Debug/*
+!oap_labs 1/bin/Debug/Logs.csv
 */obj/
 .vs

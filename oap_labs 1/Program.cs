@@ -1,117 +1,125 @@
 ﻿using System;
+using Microsoft.VisualBasic.FileIO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*
+using System.IO;
+using System.Xml.Serialization;
+using System.Xml.Linq;
+using System.Text.RegularExpressions;
+
 namespace oap_labs_1
 {
+    interface IAPI
+    {
+        bool Login(string name, string password);
+        bool Logout();
+    }
+    // класс реализующий интерфейс
+    class Mock : IAPI
+    {
+        public bool Login(string name, string password)
+        {
+            return true;
+        }
+        public bool Logout()
+        {
+            return true;
+        }
+    }
+    class Authorization : IAPI
+    {
+        public bool Login(string name, string password)
+        {
+            Console.WriteLine("Введите логин:");
+            string UserName = Console.ReadLine();
+            Console.WriteLine("Введите пароль:");
+            string UserPass = Console.ReadLine();
+            if (UserName == "user" && UserPass == "123456")
+            {
+                Console.WriteLine("Данные введены верно");
+            }
+            else
+            {
+                Console.WriteLine("Данные введены не верно");
+            }
+            return true;
+        }
+
+        public bool Logout()
+        {
+            return true;
+        }
+    }
+    class AuthorizationinFile : IAPI
+    {
+        public bool Login(string name, string password)
+        {
+
+
+            using (TextFieldParser parser = new TextFieldParser(@"Logs.csv"))
+            {
+                // свойство TextFieldType определяет тип полей: с разделителями или фиксированной ширины
+                parser.TextFieldType = FieldType.Delimited;
+
+                // можно указать произвольный разделитель
+                parser.SetDelimiters(",");
+
+                // считываем пока не дойдем до конца файла
+                while (!parser.EndOfData)
+                {
+                    //метод ReadFields разбивает исходную строку на массив строк
+                    string[] fields = parser.ReadFields();
+                    var Logs = fields[0];
+                    var Pass = fields[1];
+                    foreach (string field in fields)
+                    {
+                        if (name == Logs && password == Pass)
+                        {
+                            Console.WriteLine("Данные верны");
+                            return true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Не верно введены данные");
+
+                        }
+                    }
+                }
+                return false;
+            }
+        }
+
+        public bool Logout()
+        {
+            return true;
+        }
+     
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            //команда Console.Write выводит текст в консоль
-            Console.Write("Input katet1: ");
-            // команда Console.ReadLine читает СТРОКУ из консоли
-            var Katet1 = Console.ReadLine();
-
-            Console.Write("Input katet2: ");
-            var Katet2 = Console.ReadLine();
-
-            // команда Math.Sqrt - квадратный корень
-            // Math.Pow - возведение в степень
-            // Convert.ToDouble - преобразует строку в число
-            var Gipotenuza = Math.Sqrt(Math.Pow(Convert.ToDouble(Katet1), 2) + Math.Pow(Convert.ToDouble(Katet2), 2));
-            var Perimetr = Convert.ToDouble(Katet1) + Convert.ToDouble(Katet2) + Convert.ToDouble(Gipotenuza);
-            var Ploshad = (Convert.ToDouble(Katet1) * Convert.ToDouble(Katet2)) / 2;
-
-            // выводим результат
-            // знак $ перед строкой указывает, что внутри строки в фигурных скобках названия переменных
-            Console.WriteLine($"Perimetr = {Perimetr}");
-            Console.WriteLine($"Ploshad = {Ploshad}");
-            // читаем строку, чтобы консольное окно сразу не закрылось
-            Console.Write("Press ENTER to continue...");
+            IAPI myAPI = new Authorization();
+            if (myAPI.Login("userqweiu","123456qwtpk"))
+            {
+                Console.WriteLine("Авторизация успешна");
+            }
+            else
+            {
+                Console.WriteLine("Авторизация не успешна");
+            }
+            myAPI.Logout();
             Console.ReadLine();
         }
     }
+
 }
-        */
+
+        
 
 
-
-
-// подключены какие-то библиотеки
-
-
-// namespace такой же как и название проекта
-/*
-namespace oap_labs
-{
-    // про классы мы пока не говорили...
-    class Program
-    {
-        // точка входа в программу
-        static void Main(string[] args)
-        {
-            // команда Console.Write выводит текст в консоль
-            Console.Write("input Хa ");
-            // команда Console.ReadLine читает СТРОКУ из консоли
-            var Xa = Console.ReadLine();
-            Console.Write("input Xb");
-            var Xb = Console.ReadLine();
-            Console.Write("Input Ya ");
-            var Ya = Console.ReadLine();
-            Console.Write("input Yb");
-            var Yb = Console.ReadLine();           
-            Console.Write("input Xc");
-            var Xc = Console.ReadLine();
-            Console.Write("input Yc");
-            var Yc = Console.ReadLine();
-            var AB = Math.Sqrt(
-             Math.Pow(Convert.ToDouble(Xb) - Convert.ToDouble(Xa), 2) +
-             Math.Pow(Convert.ToDouble(Yb) - Convert.ToDouble(Ya), 2)
-             );
-            var BC = Math.Sqrt(
-            Math.Pow(Convert.ToDouble(Xc) - Convert.ToDouble(Xb), 2) +
-            Math.Pow(Convert.ToDouble(Yc) - Convert.ToDouble(Yb), 2)
-            );
-            var AC = Math.Sqrt(
-            Math.Pow(Convert.ToDouble(Xc) - Convert.ToDouble(Xa), 2) +
-            Math.Pow(Convert.ToDouble(Yc) - Convert.ToDouble(Ya), 2)
-            );
-            // команда Math.Sqrt - квадратный корень
-            // Math.Pow - возведение в степень
-            // Convert.ToDouble - преобразует строку в число
-            var Perimetr = (Convert.ToDouble(AB)) + (Convert.ToDouble(BC)) + (Convert.ToDouble(AC));
-            var PolyPerimetr = Convert.ToDouble(Perimetr) / 2;
-            var Ploshad = Math.Sqrt(
-            Convert.ToDouble(PolyPerimetr) * (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(AB)) *
-            (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(BC)) *
-            (Convert.ToDouble(PolyPerimetr) - Convert.ToDouble(AC))
-            );
-            // выводим результат
-            // знак $ перед строкой указывает, что внутри строки в фигурных скобках названия переменных
-            Console.WriteLine($"Perimetr = {Perimetr}");
-            Console.WriteLine($"Ploshad = {Ploshad}");
-
-            // читаем строку, чтобы консольное окно сразу не закрылось
-            Console.Write("Press ENTER to continue...");
-            Console.ReadLine();
-        }
-    }
-}
-*/
-
-/*
-Console.Write("Inpat radius: ");
-var radius = Console.ReadLine();
-var dlina = Convert.ToDouble(radius) * Math.PI * 2;
-var ploshad = Math.Pow(Convert.ToDouble(radius), 2) * Math.PI;
-Console.WriteLine($"dlina = {dlina}");
-Console.WriteLine($"Ploshad = {ploshad}");
-Console.Write("Press ENTER to continue...");
-Console.ReadLine();
-*/
 
 
 
